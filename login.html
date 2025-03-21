@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup - PGWale</title>
+    <link rel="stylesheet" href="/styles/login.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Section (Particles.js) -->
+        <div class="left-section">
+            <div id="particles-js"></div>
+            <div class="home-heading">
+                <h1>Welcome to PGWale</h1> <img src="images/home.png" alt="">
+            </div>
+           
+            <p>Find the best PGs with ease!</p>
+        </div>
+
+        <!-- Right Section (Form) -->
+        <div class="right-section">
+            <div class="form-container">
+                <h2 id="form-title">Sign In or Create Account</h2>
+                <form id="auth-form">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="btn" id="login-btn">Login</button>
+                    <p class="toggle-text">
+                        Don't have an account? <a href="#" id="toggle-form">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particles.js Script -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/scripts/particles.js"></script> 
+    <script src="/scripts/login.js"></script>
+    
+    
+</body>
+</html>

@@ -28,6 +28,19 @@ body {
     overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
 }
 
+/* #logout-btn {
+    display: none; /* Hide initially */
+
+#logout-btn{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #2C3E50;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+
+}
 /* Dropdown container */
 .custom-dropdown {
     position: relative;
@@ -143,8 +156,8 @@ body {
 }
 
 #cart-txt{
-    font-size: small;
-    font-weight: bold;
+    font-size: x-small;
+    font-weight: bolder;
 }
 
 .search-btn {
@@ -254,6 +267,7 @@ body {
     padding: 5px;
     width: 900px;
     margin-right: 300px;
+    margin-left: 20px;
 }
 
 .dropdown {
@@ -275,10 +289,11 @@ body {
     position: relative;
     width: 100%;
     height:100vh;
-    background: url('images/pexels-itsterrymag-2631746.jpg');
+    background: url('/images/bg1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;

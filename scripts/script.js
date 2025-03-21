@@ -22,6 +22,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    /* To change bg dynamically  */
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const images = [
+            "images/bg1.jpg",
+            "images/bg2.jpg",
+            "images/bg3.jpg",
+            "images/bg4.jpg"
+        ];
+    
+        let currentIndex = 0;
+        function changeBackground() {
+            document.getElementById("hero").style.backgroundImage = `url(${images[currentIndex]})`;
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+        
+        setInterval(changeBackground, 3000);
+    });
+    
 
     
 
@@ -144,3 +163,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const logoutBtn = document.getElementById("logout-btn");
+
+    if (localStorage.getItem("isLoggedIn") === "true") {
+        logoutBtn.style.display = "block"; // Show Logout button
+    }
+    // } else {
+    //     logoutBtn.style.display = "none"; // Hide Logout button
+    // }
+
+    // Logout functionality
+    logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("isLoggedIn"); // Clear login state
+        window.location.href = "login.html"; // Redirect to Login page
+    });
+});
