@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Service - PGWale</title>
+    <link rel="stylesheet" href="styles/customer-service.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Section (Lottie Animation) -->
+        <div class="left-section">
+            <div id="lottie-container"></div>
+        </div>
+
+        <!-- Right Section (Customer Service Content) -->
+        <div class="right-section">
+            <h2>Customer Support</h2>
+            <p>Need help? Contact us at <a href="mailto:support@pgwale.com">support@pgwale.com</a></p>
+            
+            <h3>FAQ</h3>
+            <details>
+                <summary>How can I find a PG?</summary>
+                <p>Simply use our search tool to filter and find PGs near you.</p>
+            </details>
+            <details>
+                <summary>How do I contact PG owners?</summary>
+                <p>Each listing provides a contact button to reach out to owners.</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- Lottie Animation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <script>
+        lottie.loadAnimation({
+            container: document.getElementById("lottie-container"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "/animations/support.json" // Update with the correct path
+        });
+    </script>
+    <script src="scripts/customer-service.js"></script>
+
+
+</body>
+</html>

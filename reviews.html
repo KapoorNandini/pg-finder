@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - PGWale</title>
+    <link rel="stylesheet" href="styles/reviews.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Section (Lottie Animation) -->
+        <div class="left-section">
+            <div id="lottie-container"></div>
+        </div>
+
+        <!-- Right Section (Reviews Content) -->
+        <div class="right-section">
+            <h2>Customer Feedback</h2>
+            
+            <div class="review">
+                <h3>John Doe</h3>
+                <p>⭐⭐⭐⭐⭐ Amazing service! Found a PG easily.</p>
+            </div>
+            <div class="review">
+                <h3>Sarah Lee</h3>
+                <p>⭐⭐⭐⭐ Very helpful and quick response.</p>
+            </div>
+
+            <form id="review-form">
+                <h3>Your Feedback matters!</h3>
+                <textarea placeholder="Share your experience..."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lottie Animation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <script>
+        lottie.loadAnimation({
+            container: document.getElementById("lottie-container"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "/animations/reviews.json" // Update with the correct path
+        });
+        </script>
+    <script src="scripts/reviews.js"></script>
+
+</body>
+</html>

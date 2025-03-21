@@ -41,3 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+var animation = lottie.loadAnimation({
+    container: document.getElementById("lottie-container"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "animations/location.json",
+});
+
+animation.setSpeed(0.7);
+

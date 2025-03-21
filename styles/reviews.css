@@ -1,0 +1,94 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left Section - Lottie Animation */
+.left-section {
+    width: 50%;
+    background-color: #182D42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#lottie-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Right Section - Content */
+.right-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 70px;
+    background-color: #FAFAFA;
+}
+
+.right-section h2 {
+    margin-left: 1px;
+    margin-bottom: 15px;
+}
+
+.review {
+    background: #FAFAFA;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+/* textarea {
+    width: 600px;
+    height: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+} */
+textarea {
+    width: 100%;
+    min-height: 200px; /* Initial height */
+    max-height: 400px; /* Prevents excessive growth */
+    /* overflow-y: hidden; Hides scroll */
+    resize: none; /* Prevents manual resizing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+
+button {
+    padding: 10px 20px;
+    background: #FDD835;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover{
+    background-color: #FBC02D; /* Slightly darker yellow */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+#review-form h3{
+    margin-left: 1px;
+    /* margin: 5px 0; */
+    margin-top: 25px;
+}
