@@ -54,10 +54,31 @@
     <!-- Sub header -->
     <div class="sub-header">
         <nav class="subhdr">
-            <ul>
-                <li><a href="#">All
-                        <img src="images/hamburger.png" class="hamburger" alt="">
-                    </a></li>
+            <ul id="all-dropdown">
+                <li class="dropdown">
+                    <a href="#" id="all-dropdown-btn"> All <img src="images/hamburger.png" class="hamburger" alt="Menu">
+                    </a>
+                    <div class="dropdown-menu">
+                        <p>Select Category:</p>
+                        <label><input type="radio" name="pg-type" value="boys"> Boys PG</label>
+                        <label><input type="radio" name="pg-type" value="girls"> Girls PG</label>
+                        <label><input type="radio" name="pg-type" value="unisex"> Unisex PG</label>
+                        <label><input type="radio" name="pg-type" value="coliving"> Co-living Spaces</label>
+                    
+                        <hr> <!-- Separator for better design -->
+                    
+                        <p>Additional Filters:</p>
+                        <label><input type="checkbox" name="amenities" value="1rk"> 1RK</label>
+                        <label><input type="checkbox" name="amenities" value="2bhk"> 2BHK Sharing</label>
+                        <label><input type="checkbox" name="amenities" value="hostel"> Hostel Rooms</label>
+                        <label><input type="checkbox" name="amenities" value="ac"> AC PGs</label>
+                        <label><input type="checkbox" name="amenities" value="food"> PGs with Food</label>
+                        <label><input type="checkbox" name="amenities" value="wifi"> PGs with WiFi</label>
+                        <label><input type="checkbox" name="amenities" value="luxury"> Luxury PGs</label>
+                        <label><input type="checkbox" name="amenities" value="budget"> Budget-Friendly PGs</label>
+                    </div>
+                </li>
+
                 <li><a href="#">Location</a></li>
                 <li><a href="#">List your PG</a></li>
                 <li><a href="./reviews.html">Reviews</a></li>

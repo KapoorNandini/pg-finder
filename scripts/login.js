@@ -50,5 +50,5 @@ var animation = lottie.loadAnimation({
     path: "animations/location.json",
 });
 
-animation.setSpeed(0.7);
+animation.setSpeed(1);
 

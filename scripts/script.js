@@ -179,3 +179,36 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "login.html"; // Redirect to Login page
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const allDropdownBtn = document.getElementById("all-dropdown-btn");
+    const allDropdownMenu = document.getElementById("all-dropdown");
+
+    // Toggle dropdown on button click
+    allDropdownBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        allDropdownMenu.classList.toggle("active");
+        event.stopPropagation(); // Prevent event from bubbling up
+    });
+
+    // Prevent dropdown from closing when clicking inside
+    allDropdownMenu.addEventListener("click", function (event) {
+        event.stopPropagation(); // Stops click event from reaching the document listener
+    });
+
+    // Close dropdown if clicked outside
+    document.addEventListener("click", function (event) {
+        if (!allDropdownBtn.contains(event.target) && !allDropdownMenu.contains(event.target)) {
+            allDropdownMenu.classList.remove("active");
+        }
+    });
+
+    // Close dropdown on ESC key press
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            allDropdownMenu.classList.remove("active");
+        }
+    });
+});
+
