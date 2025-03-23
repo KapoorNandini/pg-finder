@@ -22,19 +22,69 @@
 
         <!-- Right Section (Form) -->
         <div class="right-section">
-            <div class="form-container">
-                <h2 id="form-title">Sign In or Create Account</h2>
-                <form id="auth-form">
+           
+            <div class="login-container" id="login-container">
+                <h2>Welcome Back</h2>
+                <p>Sign in to continue</p>
+    
+                <!-- Social Login -->
+                <div class="social-login">
+                    <button class="google-btn">
+                        <img src="./images/search.png" alt=""> 
+                        <span>Sign in with Google</span>
+                    </button>
+                    <button class="facebook-btn">
+                        <img src="./images/facebook.png" alt=""> 
+                        <span>Sign in with Facebook</span>
+                    </button>
+                </div>
+    
+                <div class="separator"><span>or</span></div>
+    
+                <!-- Standard Login -->
+                <form id="login-form">
                     <input type="email" placeholder="Email" required>
                     <input type="password" placeholder="Password" required>
-                    <button type="submit" class="btn" id="login-btn">Login</button>
-                    <p class="toggle-text">
-                        Don't have an account? <a href="#" id="toggle-form">Sign Up</a>
-                    </p>
+                    <button type="submit" class="login-btn">Login</button>
                 </form>
+    
+                <p class="signup-text">
+                    Don't have an account? <span id="show-signup">Sign Up</span>
+                </p>
+            </div>
+    
+            <!-- Sign-Up Form -->
+            <div id="signup-container" class="hidden">
+                <h2>Create an Account</h2>
+                <p>Sign up to get started</p>
+
+                <div class="social-login">
+                    <button class="google-btn">
+                        <img src="./images/search.png" alt=""> 
+                        <span>Sign in with Google</span>
+                    </button>
+                    <button class="facebook-btn">
+                        <img src="./images/facebook.png" alt=""> 
+                        <span>Sign in with Facebook</span>
+                    </button>
+                </div>
+
+                <div class="separator"><span>or</span></div>
+            
+                <form>
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit" class="signup-btn">Sign Up</button>
+                </form>
+            
+                <p class="signup-text">
+                    Already have an account? <span id="show-login">Sign In</span>
+                </p>
             </div>
         </div>
-    </div>
 
     <!-- Particles.js Script -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>

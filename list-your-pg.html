@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your PG</title>
+    <link rel="stylesheet" href="/styles/list-your-pg.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <div class="pg-listing-container">
+
+        <!-- Left Section: Lottie Animation -->
+        <div class="left-section">
+            <div id="lottie-animation"></div>
+        </div>
+
+        <!-- Right Section: PG Listing Form -->
+        <div class="right-section">
+            <h2>List Your PG</h2>
+            <form id="pgForm">
+
+                <label>PG Name</label>
+                <input type="text" name="pg_name" required>
+
+                <label>Owner Name</label>
+                <input type="text" name="owner_name" required>
+
+                <label>Contact Number</label>
+                <input type="tel" name="contact" required>
+
+                <label>Email</label>
+                <input type="email" name="email" required>
+
+                <label>City</label>
+                <select name="city">
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Mohali">Mohali</option>
+                    <option value="Zirakpur">Zirakpur</option>
+                    <option value="Banur">Banur</option>
+                    <option value="Rajpura">Rajpura</option>
+                </select>
+
+                <label>Full Address</label>
+                <textarea name="address" required></textarea>
+
+                <div class="pg-type-options">
+                    <label>PG Type</label>
+                    <label><input type="radio" name="pg_type" value="boys"> Boys PG</label>
+                    <label><input type="radio" name="pg_type" value="girls"> Girls PG</label>
+                    <label><input type="radio" name="pg_type" value="unisex"> Unisex PG</label>
+                    <label><input type="radio" name="pg_type" value="coliving"> Co-Living</label>
+                </div>
+
+
+                <div class="facilities-options">
+                    <label>Facilities</label>
+                    <label><input type="checkbox" name="facilities" value="ac"> AC</label>
+                    <label><input type="checkbox" name="facilities" value="wifi"> WiFi</label>
+                    <label><input type="checkbox" name="facilities" value="food"> Food</label>
+                    <label><input type="checkbox" name="facilities" value="laundry"> Laundry</label>
+                    <label><input type="checkbox" name="facilities" value="parking"> Parking</label>
+                </div>
+
+                <label>Monthly Rent (₹)</label>
+                <input type="number" name="rent" required>
+
+                <label>Security Deposit (₹)</label>
+                <input type="number" name="deposit">
+
+                <label for="imageUpload" class="custom-file-upload">Choose an Image</label>
+                <input type="file" id="imageUpload" name="images" multiple accept="image/*" hidden>
+                <span id="imageName">No image chosen</span>
+
+                <label for="videoUpload" class="custom-file-upload">Choose a Video</label>
+                <input type="file" id="videoUpload" name="videos" multiple accept="video/*" hidden>
+                <span id="videoName">No video chosen</span>
+
+                <button type="submit">Submit PG Listing</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Load Lottie Animation
+        var animation = lottie.loadAnimation({
+            container: document.getElementById("lottie-animation"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "/animations/registration.json" // Replace with your Lottie JSON file
+        });
+    </script>
+    <script src="/scripts/list-your-pg.js"></script>
+
+</body>
+
+</html>

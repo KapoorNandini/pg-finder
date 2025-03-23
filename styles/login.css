@@ -32,8 +32,10 @@
 }
 
 .left-section p{
-    font-weight: bolder;
-    margin-right: 125px;
+    font-weight: bold;
+    margin-right: 142px;
+    color: #fafafa;
+    font-size: 15px;
 }
 
 /* #particles-js {
@@ -58,8 +60,8 @@
 
 
 #lottie-container {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 }
 
 
@@ -86,7 +88,7 @@
     overflow: hidden;
 }
 
-/* Right Section - Form */
+
 .right-section {
     width: 50%;
     display: flex;
@@ -95,48 +97,152 @@
     background-color: #FAFAFA;
 }
 
-.form-container {
-    background: white;
-    padding: 40px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+.login-container h2{
+    margin-bottom: 8px;
     text-align: center;
-    width: 350px;
-    height: 400px;
 }
 
-.form-container h2 {
-    margin-bottom: 20px;
+.login-container p{
+    margin-bottom: 8px;
+    text-align: center;
 }
 
-input {
+/* Social Login Buttons */
+.social-login {
+    display: flex;
+    flex-direction: row;
+    /* gap: 10px; */
+    margin-bottom: 15px;
+}
+
+.google-btn, .facebook-btn {
+    display: flex;
+    /* justify-content: space-between; */
+    height:40px;
     width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
+    gap: 10px;
+    background: none;
 }
 
-.btn {
-    width: 100%;
-    padding: 12px;
-    background: #FDD835;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 20px;
-    font-size: 16px;
+
+
+.google-btn img {
+    height: 20px;
+    width: 20px;
+    ;
 }
 
-.toggle-text {
-    margin-top: 35px;
+.facebook-btn img{
+   height: 20px;
+   width: 20px;
+   
+}
+
+.google-btn span{
+    margin-top: 3px;
+}
+
+.facebook-btn span{
+    margin-top: 3px;
+}
+
+/* Separator */
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.separator span {
+    background: white;
+    padding: 0 10px;
     font-size: 14px;
+    color: gray;
 }
 
-.toggle-text a {
-    color: #182D42;
-    text-decoration: none;
+/* Input Fields */
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background-color: #ffcc00;
+    color: black;
     font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-container p{
+    font-weight: 500;
+}
+
+
+
+/* Signup/Login Toggle Text */
+.signup-text {
+    margin-top: 25px;
+}
+
+.signup-text span {
+    color: #007bff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+/* Hide Sign-Up Form Initially */
+.hidden {
+    display: none;
+}
+
+#signup-container h2{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 90px;
+}
+
+#signup-container p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#signup-container .social-login{
+    width: 50%;
+    margin-left: 190px;
+    margin-bottom: 30px;
+}
+
+#signup-container .separator{
+    margin-bottom: 10px;
+}
+
+#signup-container form{
+    width: 50%;
+    margin-left: 190px;
+}
+/* 
+#signup-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAFAFA;
+} */
+
+.facebook-btn span{
+    text-wrap: nowrap;
 }

@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+.pg-listing-container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-section {
+    width: 50%;
+    background-color: #182D42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lottie-animation {
+    width: 90%;
+    height: 90%;
+}
+
+
+.pg-type-options, .facilities-options{
+    width: 50px;
+    text-wrap: nowrap;
+}
+
+.right-section {
+    width: 50%;
+    background: white;
+    padding: 20px ;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    /* margin-left: 10px; */
+}
+
+.right-section h2{
+    margin-top: 6px;
+    text-align: center;
+}
+
+.facilities-options{
+    margin-bottom: 40px;
+}
+
+form label {
+    display: flex;
+    margin: 15px 0 12px;
+    font-weight: bolder;
+}
+
+input, select, textarea {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-weight: 700px;
+}
+
+button {
+    background-color: #28a745;
+    color: #fafafa;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.pg-listing-container .right-section form label {
+    display: flex;
+    align-items: center;  /* Keep items aligned */
+    gap: 8px;  /* Increase spacing between radio button and label */
+    /* margin-bottom: 12px;   */
+    font-weight: bold;
+}
+
+/* Increase spacing between radio buttons */
+.pg-listing-container .right-section form input[type="radio"] {
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+.pg-listing-container .right-section form input[type="checkbox"] {
+    margin-bottom: 2px;
+    margin-right: 10px; /* Add more space between radio button and text */
+}
+
+.facilities-options .pg-type-options label{
+    margin-bottom: 10px;
+}
+
+.facilities-options label{
+    margin-top: 30px;
+}
+
+.pg-type-options label{
+    margin-top: 30px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.custom-file-upload:hover {
+    background-color: #218838;
+}
+
+span {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+

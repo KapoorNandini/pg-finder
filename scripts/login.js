@@ -8,38 +8,27 @@ particlesJS("particles-js", {
     }
 });
 
-
-document.addEventListener("click", function (e) {
-    if (e.target && e.target.id === "toggle-form") {
-        e.preventDefault();
-        let title = document.getElementById("form-title");
-        let button = document.querySelector(".btn");
-        let toggleText = document.querySelector(".toggle-text");
-
-        if (title.innerText === "Login") {
-            title.innerText = "Sign Up";
-            button.innerText = "Sign Up";
-            toggleText.innerHTML = `Already have an account? <a href="#" id="toggle-form">Login</a>`;
-        } else {
-            title.innerText = "Login";
-            button.innerText = "Login";
-            toggleText.innerHTML = `Don't have an account? <a href="#" id="toggle-form">Sign Up</a>`;
-        }
-    }
-});
-
-document.getElementById("login-btn").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevents form submission (if applicable)
-    window.location.href = "index.html"; // Redirect to your homepage
-});
-
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("login-btn").addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent default form submission
-        localStorage.setItem("isLoggedIn", "true"); // Save login state
-        window.location.href = "index.html"; // Redirect to homepage
+    const loginContainer = document.getElementById("login-container");
+    const signupContainer = document.getElementById("signup-container");
+    const showSignup = document.getElementById("show-signup");
+    const showLogin = document.getElementById("show-login");
+
+    // Show Sign-Up Form & Hide Login Form
+    showSignup.addEventListener("click", function () {
+        loginContainer.classList.add("hidden");
+        signupContainer.classList.remove("hidden");
+    });
+
+    // Show Login Form & Hide Sign-Up Form
+    showLogin.addEventListener("click", function () {
+        signupContainer.classList.add("hidden");
+        loginContainer.classList.remove("hidden");
     });
 });
+
+
+
 
 
 var animation = lottie.loadAnimation({
