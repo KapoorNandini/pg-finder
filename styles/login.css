@@ -246,3 +246,21 @@ button {
 .facebook-btn span{
     text-wrap: nowrap;
 }
+
+#password-strength{
+    font-size: 13px; /* Decrease font size */
+    margin-top: 3px; /* Reduce space */
+    margin-left: 2px;
+    font-weight: normal; /* Make it less bold */
+}
+
+.error-message {
+    color: red;
+}
+
+#password-match{
+    font-size: 13px; 
+    margin-top: 3px; 
+    font-weight: normal;
+    margin-right: 210px;
+}
