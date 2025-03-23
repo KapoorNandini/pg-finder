@@ -212,3 +212,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const locationDropdownBtn = document.getElementById("location-dropdown-btn");
+    const locationDropdownMenu = document.getElementById("location-dropdown");
+
+    if (!locationDropdownBtn || !locationDropdownMenu) {
+        console.error("Location dropdown elements not found!");
+        return;
+    }
+
+    // Toggle dropdown on button click
+    locationDropdownBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        locationDropdownMenu.classList.toggle("active");
+        console.log("Location dropdown toggled!");
+    });
+
+    // Close dropdown if clicked outside
+    document.addEventListener("click", function (event) {
+        if (!locationDropdownBtn.contains(event.target) && !locationDropdownMenu.contains(event.target)) {
+            locationDropdownMenu.classList.remove("active");
+            console.log("Location dropdown closed!");
+        }
+    });
+});
