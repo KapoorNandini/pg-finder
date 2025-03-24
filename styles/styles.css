@@ -28,21 +28,103 @@ body {
     overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
 }
 
-/* #logout-btn {
-    display: none; /* Hide initially */
 
-#logout-btn{
-    text-decoration: none;
-    padding: 10px 10px;
-    background-color: #44576a;
-    color: white;
-    font-weight: bold;
-    border-radius: 30px;
-    cursor: pointer;
-    filter: contrast(1.1) brightness(1.1);
-    border: none;
-    
+.navbar {
+    background-color: #fafafa;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;  
+    transition: all 0.3s ease-in-out;
+} 
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    /* margin-right: 0px; */
+    margin-left: 0px;
 }
+
+.logo img {
+    height: 25px;
+    width: 25px;
+}
+
+.logo p {
+    color: #2C3E50; /* Change text color to white for better contrast */
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 0;
+}
+
+
+/* Make search container align properly */
+ .search-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    background: #ddd;
+    padding: 8px;
+    border-radius: 8px;
+    width: 60%; /* Adjust width */
+    max-width: 700px; 
+ } 
+
+.search-box {
+    flex-grow: 1; /* Allows input to expand */
+    /* width: 100%; */
+    /* padding: 10px 15px; */
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.search-btn{
+    /* width: 50px; */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-img{
+    height: 25px;
+    width: 25px;
+    margin-left: 410px; 
+}
+
+
+
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    /* width: 100%; */
+    display: none;
+}
+
+.custom-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+
+/* Fix cart alignment */
+.cart-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
 /* Dropdown container */
 .custom-dropdown {
     position: relative;
@@ -59,7 +141,7 @@ body {
 .dropdown-selected {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 /* Custom arrow */
@@ -117,23 +199,6 @@ body {
 }
 
 
-.search-box {
-    border: none;
-    /* padding: -5px; */
-    outline: none;
-    background: transparent;
-    font-size: 15px;
-}
-
-
-.search-img{
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    margin-left: 610px;
-}
-
-
 .account-cart {
     display: flex;
     align-items: center;
@@ -144,10 +209,10 @@ body {
     border-radius: 20px;
     font-size: 15px;
     cursor: pointer;
-    margin-left: 120px;
+    margin-left: 320px;
     text-wrap: nowrap;
     font-weight: bold;
-    width: max-content;
+    /* width: max-content; */
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     filter: contrast(1) brightness(1);
 }
@@ -155,7 +220,6 @@ body {
 .account-cart:hover{
     background-color: #ffce51;
 }
-
 
 .account-cart img{
     width: 24.46px;
@@ -168,31 +232,26 @@ body {
     font-weight: bolder;
 }
 
-.search-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    /* padding: 20px; */
-}
-
 .account-cart span{
     background: transparent;
 }
 
+#logout-btn{
+    text-decoration: none;
+    padding: 10px 10px;
+    /* background-color: #44576a; */
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    filter: contrast(1.1) brightness(1.1);
+    border: none;
+}
 
-.navbar {
-    background-color: #fafafa;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 50px;  
-    transition: all 0.3s ease-in-out;
-} 
-
+#logout-btn img{
+    height: 25px;
+    width: 25px;
+}
 
 .hamburger{
     position: relative;
@@ -321,44 +380,6 @@ hr {
     height: 1px;
     background: rgba(255, 255, 255, 0.3);
     margin: 10px 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    /* margin-right: 0px; */
-    margin-left: 0px;
-}
-
-.logo img {
-    height: 25px;
-    width: 25px;
-}
-
-.logo p {
-    color: #2C3E50; /* Change text color to white for better contrast */
-    font-size: 1.5rem;
-    font-weight: bolder;
-    margin: 0;
-}
-
-
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    background-color: #dbdada;
-    border-radius: 15px;
-    padding: 5px;
-    width: 900px;
-    margin-right: 300px;
-    margin-left: 20px;
 }
 
 .dropdown {
@@ -948,16 +969,6 @@ hr {
     cursor: pointer;
     /* background: none; */
 }
-
-
-/* Filter Button in Navbar */
-/* .filter-button {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-} */
 .filter-button{
     display: flex;
     /* margin: 8px; */
@@ -1061,3 +1072,92 @@ hr {
 
 
 
+/* @media (max-width: 1024px) {
+    .navbar, .sub-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .search-container {
+        width: 20%;
+        margin-right: 0;
+        margin-left: 20px;
+    }
+
+    .pg-form-container {
+        width: 50%;
+        right: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        /* align-items: center; */
+        /* padding: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .account-cart{
+       display: flex;
+       gap: 25px;
+       margin-left: 50px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .menu {
+        display: none; /* Keep it hidden until toggled */
+        /* flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-item {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .pg-btn-form {
+        padding: 10px 40px;
+    }
+
+    .pg-form-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .pg-listings {
+        gap: 20px;
+    }
+
+    .pg-card {
+        width: 100%;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 10px;
+    }
+}  */ 

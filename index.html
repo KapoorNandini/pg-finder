@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PGWale</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -13,43 +14,51 @@
         <nav class="navbar">
             <div class="logo">
                 <img src="images/pin.png" alt="logo">
-                <p>PGWale.in</p>
+                <p>PGWale</p>
             </div>
 
-            <!-- For search bar -->
-            <div class="nav-right">
-                <div class="search-container">
-                    <div class="custom-dropdown">
-                        <div class="dropdown-selected">
-                            <span>All</span>
-                            <img src="images/down-arrow.png" class="dropdown-arrow" alt="Dropdown Arrow">
-                        </div>
-                        <ul class="dropdown-menu">
-                            <li data-value="Sundar Nagar">Sundar Nagar</li>
-                            <li data-value="Rajpura Town">Rajpura Town</li>
-                            <li data-value="Banur HouseFed">Banur HouseFed</li>
-                            <li data-value="Dalima Vihar">Dalima Vihar</li>
-                            <li data-value="Rajpura Bypass">Rajpura Bypass</li>
-                        </ul>
-                    </div>
 
-                    <input type="text" placeholder="Search by Location" class="search-box">
-                    <button class="search-btn"><img class="search-img" src="images/search-bar-01.png"
-                            alt="search-bar"></button>
-                    <div class="account-cart">
-                        <span class="user-name">Hello, Eve</span>
-                        <div>
-                            <img src="images/shopping-cart.png" alt=""><span class="cart-icon">
-                                <span id="cart-txt">Cart</span>
-                        </div>
-
+            <div class="search-container">
+                <div class="custom-dropdown">
+                    <div class="dropdown-selected">
+                        <span>All</span>
+                        <img src="images/down-arrow.png" class="dropdown-arrow" alt="Dropdown Arrow">
                     </div>
+                    <ul class="dropdown-menu">
+                        <li data-value="Sundar Nagar">Sundar Nagar</li>
+                        <li data-value="Rajpura Town">Rajpura Town</li>
+                        <li data-value="Banur HouseFed">Banur HouseFed</li>
+                        <li data-value="Dalima Vihar">Dalima Vihar</li>
+                        <li data-value="Rajpura Bypass">Rajpura Bypass</li>
+                    </ul>
                 </div>
+                
+                
+                <input class="search-box" type="text" placeholder="Search by Location">
+                <button class="search-btn">
+                    <img class="search-img" src="images/search-bar-01.png" alt="search-bar">
+                </button>
+                
+                
+            </div>
+            
+            
+            <!-- Account & Cart -->
+            <div class="account-cart">
+                <span class="user-name">Hello, Eve</span>
+                <div class="cart-container">
+                    <img src="images/shopping-cart.png" alt="">
+                    <span class="cart-icon">
+                        <span id="cart-txt">Cart</span>
+                    </span>
+                </div>
+            </div>
 
-                <button id="logout-btn" class="btn">Logout</button>
+            <!-- Logout Button -->
+            <button id="logout-btn" class="btn"><img src="/images/power-off.png" alt=""></button>
         </nav>
-
     </header>
+
 
     <!-- Sub header -->
     <div class="sub-header">
@@ -186,7 +195,7 @@
                     <input type="checkbox" checked>
                     <p class="checkbox-txt">Send me updates on WhatsApp</p>
                 </label>
-                <a href="login.html">  <button type="submit"  class="pg-btn-form">FIND YOUR PG</button> </a> 
+                <a href="login.html"> <button type="submit" class="pg-btn-form">FIND YOUR PG</button> </a>
                 <p class="form-terms">
                     By submitting this form, you agree to the <a href="#">privacy policy</a> &
                     <a href="#">terms and conditions</a>.
@@ -350,7 +359,7 @@
             </div>
         </div>
 
-        <a href="./login.html"><button class="pg-btn">FIND MY PG NOW</button></a> 
+        <a href="./login.html"><button class="pg-btn">FIND MY PG NOW</button></a>
     </section>
 
 
