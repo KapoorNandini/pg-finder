@@ -3,6 +3,7 @@ window.addEventListener("scroll", function () {
 });
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const dropdown = document.querySelector(".custom-dropdown");
     const selected = document.querySelector(".dropdown-selected span");
