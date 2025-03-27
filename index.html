@@ -35,7 +35,7 @@
 
                 <input class="search-box" type="text" placeholder="Search by Location">
                 <button class="search-btn">
-                    <img  class="search-img"  src="images/search-bar-01.png" alt="search-bar">
+                    <img class="search-img" src="images/search-bar-01.png" alt="search-bar">
                 </button>
 
             </div>
@@ -71,9 +71,7 @@
                 <label><input type="radio" name="pg-type" value="girls"> Girls PG</label>
                 <label><input type="radio" name="pg-type" value="unisex"> Unisex PG</label>
                 <label><input type="radio" name="pg-type" value="coliving"> Co-living Spaces</label>
-
-                <hr> <!-- Separator for better design -->
-
+                <hr>
                 <p>Additional Filters:</p>
                 <label><input type="checkbox" name="amenities" value="1rk"> 1RK</label>
                 <label><input type="checkbox" name="amenities" value="2bhk"> 2BHK Sharing</label>
@@ -84,53 +82,50 @@
                 <label><input type="checkbox" name="amenities" value="luxury"> Luxury PGs</label>
                 <label><input type="checkbox" name="amenities" value="budget"> Budget-Friendly PGs</label>
             </ul>
+            
 
-            <!-- Navbar Links -->
+            <!-- Location Dropdown Button -->
+           
+            <button id="location-dropdown-btn">Location<span class="arrow">▼</span></button>
+            <!-- Dropdown Menu -->
+            <ul id="location-dropdown" class="dropdown-menu">
+                <p>Select a City:</p>
+                <label><input type="radio" name="location" value="rajpura"> Rajpura</label>
+                <label><input type="radio" name="location" value="banur"> Banur</label>
+                <label><input type="radio" name="location" value="zirakpur"> Zirakpur</label>
+                <label><input type="radio" name="location" value="chandigarh"> Chandigarh</label>
+                <label><input type="radio" name="location" value="mohali"> Mohali</label>
+                <hr>
+                <p>Popular Areas in Chandigarh:</p>
+                <label><input type="checkbox" name="area" value="sector-17"> Sector 17</label>
+                <label><input type="checkbox" name="area" value="sector-22"> Sector 22</label>
+                <label><input type="checkbox" name="area" value="sector-34"> Sector 34</label>
+                <label><input type="checkbox" name="area" value="sector-43"> Sector 43</label>
+                <label><input type="checkbox" name="area" value="it-park"> IT Park</label>
+                <hr>
+                <p>Popular Areas in Mohali:</p>
+                <label><input type="checkbox" name="area" value="phase-3b2"> Phase 3B2</label>
+                <label><input type="checkbox" name="area" value="phase-5"> Phase 5</label>
+                <label><input type="checkbox" name="area" value="sector-70"> Sector 70</label>
+                <label><input type="checkbox" name="area" value="airport-road"> Airport Road</label>
+            </ul>
+
+
             <ul class="navbar-links">
-                <!-- Location Dropdown Button -->
-                <button id="location-dropdown-btn">Location<span class="arrow">▼</span></button>
-
-                <!-- Dropdown Menu -->
-                <ul id="location-dropdown" class="dropdown-menu">
-                    <p>Select a City:</p>
-                    <label><input type="radio" name="location" value="rajpura"> Rajpura</label>
-                    <label><input type="radio" name="location" value="banur"> Banur</label>
-                    <label><input type="radio" name="location" value="zirakpur"> Zirakpur</label>
-                    <label><input type="radio" name="location" value="chandigarh"> Chandigarh</label>
-                    <label><input type="radio" name="location" value="mohali"> Mohali</label>
-
-                    <hr> <!-- Separator for better design -->
-
-                    <p>Popular Areas in Chandigarh:</p>
-                    <label><input type="checkbox" name="area" value="sector-17"> Sector 17</label>
-                    <label><input type="checkbox" name="area" value="sector-22"> Sector 22</label>
-                    <label><input type="checkbox" name="area" value="sector-34"> Sector 34</label>
-                    <label><input type="checkbox" name="area" value="sector-43"> Sector 43</label>
-                    <label><input type="checkbox" name="area" value="it-park"> IT Park</label>
-
-                    <hr>
-
-                    <p>Popular Areas in Mohali:</p>
-                    <label><input type="checkbox" name="area" value="phase-3b2"> Phase 3B2</label>
-                    <label><input type="checkbox" name="area" value="phase-5"> Phase 5</label>
-                    <label><input type="checkbox" name="area" value="sector-70"> Sector 70</label>
-                    <label><input type="checkbox" name="area" value="airport-road"> Airport Road</label>
-                </ul>
-
                 <li><a href="./list-your-pg.html">List your PG</a></li>
                 <li><a href="./reviews.html">Reviews</a></li>
                 <li><a href="./customer-service.html">Customer Service</a></li>
                 <li><a href="./login.html">Login / Sign Up</a></li>
             </ul>
 
-
+            <!-- Filter Button -->
             <div class="filter-button">
                 <span>Filters</span>
                 <img src="images/filter.png" alt="Filter" id="openFilter">
             </div>
-
         </nav>
     </div>
+
 
 
     <!-- Hidden Filter Panel -->

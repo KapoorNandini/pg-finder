@@ -43,7 +43,7 @@ body {
 
 .navbar {
     background-color: #fafafa;
-    position: sticky;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 2000;
@@ -77,36 +77,41 @@ body {
 
 /* Make search container align properly */
 .search-container {
+    position: absolute;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     /* Align items vertically */
     background: #ddd;
     padding: 8px;
     border-radius: 8px;
-    /* width: 10%; */
-    max-width: 1000px;
-    margin-left: 25px;
+    width: 70%;
+    margin-left: 140px;
     flex-grow: 1;
 }
 
 .search-box {
-    flex-grow: 1;
+    position: absolute;
+    /* flex-grow: 1; */
     font-size: 16px;
     border: none;
     outline: none;
     background: none;
-    margin-right: 600px;
+    left: 70px;
+    top:16px;
 }
 
-.search-btn{
-    background:none;
+.search-btn {
+    background: none;
     border: none;
 }
 
-.search-img{
-    height: 22px;
-    width: 22px;
-    /* margin-left: 600px; */
+.search-img {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    top: 12px;
+    left: 1025px;
+    /* top: 100px; */
 }
 
 
@@ -206,6 +211,7 @@ body {
 
 
 .account-cart {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -214,7 +220,7 @@ body {
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 15px;
-    margin-left: 60px;
+    left: 1250px;
     cursor: pointer;
     text-wrap: nowrap;
     font-weight: bold;
@@ -250,11 +256,12 @@ body {
     cursor: pointer;
     filter: contrast(1.1) brightness(1.1);
     border: none;
+    background: none;
 }
 
 #logout-btn img {
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
 }
 
 .hamburger {
@@ -274,21 +281,18 @@ body {
     z-index: 999;
     background-color: #27AE60;
     padding: 15px 10px;
-    height: 60px;
+    /* height: 60px; */
     transition: all 0.3s ease-in-out;
 }
 
 .subhdr {
     display: flex;
     align-items: center;
-    /* Align items vertically */
     justify-content: flex-start;
-    /* Push everything to the left */
     background-color: #27AE60;
-    /* Green background (adjust if needed) */
-    /* padding: 10px 20px; Adjust padding */
     margin-left: 10px;
 }
+
 
 .subhdr ul {
     display: flex;
@@ -301,7 +305,7 @@ body {
     display: flex;
     justify-content: flex-start;
     gap: 170px;
-    margin-left: 10px;
+    margin-left: 120px;
 }
 
 .sub-header nav ul li {
@@ -1121,22 +1125,28 @@ hr {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
+.filter-button{
+    margin-left: 150px;
+}
 
-@media only screen and (max-width: 1024px) {
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
 
     .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
         flex-direction: row;
         align-items: flex-start;
-        padding: 8px;
+        padding: 15px;
         width: 100%;
         max-width: 100%;
-        gap: 1px;
     }
 
     .logo {
-        margin-top: 15px;
-        /* width: 5px; */
-        /* margin-left: 10px; */
+        margin-top: 10px;
     }
 
     .logo p {
@@ -1147,214 +1157,167 @@ hr {
     .logo img {
         width: 20px;
         height: 20px;
+        margin-bottom: 2px;
     }
 
     .search-container {
-        width: 30%;
-        max-width: none;
+        position: absolute;
+        width: 60%;
+        /* min-width: 250px; */
+        max-width: 1024px;
         padding: 3px;
-        /* margin-right: 380px; */
         font-size: 12px;
-        margin-top: 4px;
+        margin-left: 110px;
     }
 
-
     .search-box {
+        position: absolute;
         flex: 1;
         padding: 10px;
         border: none;
         outline: none;
-        background: transparent; /* Removes grey background */
-        font-size: 16px;
+        background: transparent;
+        font-size: 12px;
+        left: 40px;
+        top: 3px;
     }
-    
+
     .search-btn {
         background: none;
         border: none;
         cursor: pointer;
-        padding: 10px;
     }
     
     .search-btn img {
+        position: absolute;
         width: 20px;
         height: auto;
+        left: 570px;
+        top: 10px;
     }
 
     .account-cart {
-        margin-left: 30px;
-        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #FDD835;
+        padding: 8px 18px;
+        border-radius: 20px;
         font-size: 12px;
-        padding: 10px 18px;
-        /* gap: 1px; */
-        margin-top: 2px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        filter: contrast(1) brightness(1);
+
+        position: absolute;
+        max-width: 25%;
+        gap: 12px;
+        left: 785px;
+        top: 52%;
+        transform: translateY(-50%);
     }
 
     .account-cart img {
         width: 22px;
         height: 22px;
         /* position: relative; */
-        margin-right: 50px;
+        /* margin-right: 50px; */
     }
 
     #logout-btn {
+        position: absolute;
         filter: contrast(1.1) brightness(1.1);
+        left: 970px;
+        bottom: 5px;
+        background: none;
     }
 
-    #logout img {
-        height: 5px;
-        width: 5px;
-    }
+
 
     .sub-header {
-        height: auto;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .subhdr {
-        flex-direction: row;
-        align-items: flex-start;
-        margin-left: 0;
-        padding: 0 10px;
-        /* gap: 1px; */
         text-wrap: nowrap;
-        /* margin-top: 5px; */
-        position: relative;
     }
 
-    .hamburger {
-        display: block;
-        cursor: pointer;
-        position: absolute;
-        bottom: 11px;
-        right: 930px;
-        height: 24px;
-        width: 24px;
-    }
-
-    /* .hamburger div {
-            width: 100%;
-            height: 3px;
-            background: white;
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        } */
-
-    /* Hide menu by default */
-    /* .navbar-links {
-            display: none;
-            flex-direction: column;
-            width: 100%;
-            background: #27AE60;
-            padding: 10px 0;
-        } */
-
-    /* Show menu when active */
-    .navbar-links.active {
-        display: flex;
-    }
-
-    .navbar-links li {
-        display: block;
-        padding: 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    /* Dropdown menus */
-    .dropdown-menu {
-        display: none;
+    .subhdr{
         width: 100%;
-        position: relative;
+        max-width: 100%;
     }
 
-    .dropdown-menu.active {
-        display: block;
+    .sub-header nav ul{
+        gap: 75px;
+        margin-left: 40px;
     }
 
-    /* Adjust button alignment */
-    #all-dropdown-btn,
-    #location-dropdown-btn {
-        width: 100%;
-        text-align: left;
-        font-size: 16px;
-        padding: 10px;
-        border: none;
-        background: none;
-        color: white;
+    .sub-header nav ul li a{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .subhdr #all-dropdown-btn{
+        font-size: 14px;
+        margin-right: 80px;
+    }
+ 
+    .subhdr #location-dropdown-btn{
+        font-size: 14px;
+        font-weight: 700;
+        margin-right: 20px;
+    }
+
+    .subhdr .filter-button{
+        font-size: 14px;
+    }
+
+    .subhdr #location-dropdown{
+        font-size: 12px;
+        margin-left: 190px;
+    }
+
+    .filter-button{
+        margin-left: 80px;
+    }
+
+    .filter-panel{
+        /* display: none;  */
+        position: fixed;
+        right: -550px;
+        top: 70px;
+        /* margin-right:250px; */
+        font-size: 14px;
+        height: fit-content;
+        z-index: 1000;
+    }
+
+    /* .filter-panel.open {
+        display: block; 
+        transform: translateX(0);
+    } */
+
+    .filter-panel h2{
+        font-size: 14px;
+    }
+
+    .filter-panel label {
+        font-size: 12px;
+    }
+
+    .filter-section h3{
+        font-size: 14px;
+    }
+    
+    .subhdr .dropdown-menu p{
+        font-size: 14px;
+    }
+
+    .subhdr .dropdown-menu label{
+        font-size: 12px;
+    }
+
+    .hero-section{
+        max-width: 100%;
     }
 
 
+    
 }
 
-
-/* @media (max-width: 768px) {
-    .navbar {
-        display: flex;
-        flex-direction: row; */
-/* align-items: center; */
-/* padding: 10px;
-    }
-
-    .search-bar {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .account-cart{
-       display: flex;
-       gap: 25px;
-       margin-left: 50px;
-    }
-
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-        padding: 10px;
-    }
-
-    .menu {
-        display: none; /* Keep it hidden until toggled */
-/* flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    .menu.active {
-        display: flex;
-    }
-
-    .menu-item {
-        width: 100%;
-        padding: 10px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .search-container {
-        width: 100%;
-        padding: 5px;
-    }
-
-    .pg-btn-form {
-        padding: 10px 40px;
-    }
-
-    .pg-form-container {
-        width: 95%;
-        padding: 15px;
-    }
-
-    .pg-listings {
-        gap: 20px;
-    }
-
-    .pg-card {
-        width: 100%;
-    }
-
-    .footer {
-        text-align: center;
-        padding: 10px;
-    }
-}  */
