@@ -28,15 +28,17 @@ a {
     color: #000400;
 }
 
+
+
 header {
     position: static;
     z-index: 1001;
 }
 
-body {
+html,body {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 100vw;
     overflow-x: hidden;
     /* Prevents unwanted horizontal scrolling */
 }
@@ -44,7 +46,6 @@ body {
 
 .navbar {
     background-color: #fafafa;
-    /* position: relative; */
     top: 0;
     width: 100%;
     z-index: 2000;
@@ -53,7 +54,6 @@ body {
     justify-content: space-between;
     padding: 20px;
     transition: all 0.3s ease-in-out;
-
 }
 
 
@@ -80,8 +80,7 @@ body {
 /* Make search container align properly */
 .search-container {
     display: flex;  /* Flexbox for dynamic sizing */
-    align-items: center;  /* Center items vertically */
-    /* justify-content: space-between; */
+    align-items: center; 
     position: relative;
     width: 70%;
     max-width: 900px;
@@ -275,46 +274,43 @@ body {
     width: 14px;
     margin-left: 7px;
     color: #000400;
-    /* margin-top: 4px; */
 }
-
 
 .sub-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background-color: #27AE60;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 30px;
     position: sticky;
     top: 0;
+    z-index: 1000;
     width: 100%;
-    z-index: 999;
-    background-color: #27AE60;
-    padding: 15px 10px;
-    /* height: 60px; */
-    transition: all 0.3s ease-in-out;
 }
 
-.subhdr {
+nav.subhdr {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #27AE60;
-    margin-left: 10px;
+    position: relative;
+    text-wrap: nowrap;
+    flex-grow: 1; 
 }
 
-
-.subhdr ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-}
-
-.sub-header nav ul {
+.navbar-links {
     list-style: none;
     display: flex;
-    justify-content: flex-start;
-    gap: 170px;
-    margin-left: 120px;
+    align-items: center;
+    flex: 1;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    gap: 99px;
 }
 
-.sub-header nav ul li {
-    display: inline;
+.navbar-links li {
+    position: relative;
 }
 
 .sub-header nav ul li a {
@@ -322,6 +318,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
+    padding: 10px 15px;
 }
 
 .sub-header nav ul li a:hover {
@@ -344,9 +341,10 @@ body {
     font-size: 16px;
     color: white;
     font-weight: bold;
-    margin-right: 70px;
-    margin-bottom: 5px;
     cursor: pointer;
+    padding: 0px 15px;
+    margin-bottom: 4px;
+
 }
 
 #location-dropdown-btn .arrow {
@@ -364,12 +362,12 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     width: 230px;
-    /* Increased width */
     z-index: 1000;
     padding: 15px;
     color: #fff;
     font-size: 14px;
 }
+
 
 .subhdr .dropdown-menu p {
     font-weight: bold;
@@ -405,6 +403,137 @@ hr {
     padding: 5px;
     font-size: 14px;
 }
+
+
+#location-dropdown-btn {
+    font-size: medium;
+    font-weight: bolder;
+    background: none;
+    border: none;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+#location-dropdown {
+    margin-left: 80px;
+    cursor: pointer;
+    /* background: none; */
+}
+
+.filter-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    /* position: absolute; */
+}
+
+.filter-button img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+.filter-button span {
+    color: #fafafa;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hidden Filter Panel */
+/* Ensure Filter Panel is Above Everything */
+/* FILTER PANEL STYLING */
+.filter-panel {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    /* Initially hidden */
+    width: 300px;
+    height: fit-content;
+    background: #fff;
+    padding: 20px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    /* Ensure it appears on top */
+    overflow-y: auto;
+    border-left: 2px solid #ddd;
+    background-color: #354759;
+    color: #fafafa;
+    transition: right 0.3s ease-in-out;
+
+}
+
+.filter-section {
+    margin: 25px 0;
+}
+
+.filter-section h3 {
+    margin-bottom: 10px;
+}
+
+/* CLOSE BUTTON */
+.filter-panel .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fafafa;
+}
+
+/* FILTER HEADER */
+.filter-panel h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    /* color: #333; */
+}
+
+/* SLIDER STYLING */
+.filter-panel input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* AMENITIES CHECKBOX */
+.filter-panel label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* RADIO BUTTONS */
+.filter-panel input[type="radio"],
+.filter-panel input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+
+.filter-panel.active {
+    right: 0;
+}
+
+.apply-filters {
+    /* margin-top: 3px; */
+    background-color: #f8d22a;
+    /* Yellow button */
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
 
 
 .hero-content {
@@ -989,150 +1118,8 @@ hr {
     transform: translateY(0);
 }
 
-.filter-button {
-    margin-left: 70px;
-    margin-top: 2px;
-}
-
-.subhdr .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #2C3E50;
-    width: 250px;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    top: 100%;
-    left: 0;
-}
-
-.subhdr .dropdown-menu.active {
-    display: block !important;
-}
-
-#location-dropdown-btn {
-    font-size: medium;
-    font-weight: bolder;
-    background: none;
-    border: none;
-    color: #fafafa;
-    cursor: pointer;
-}
-
-#location-dropdown {
-    margin-left: 220px;
-    cursor: pointer;
-    /* background: none; */
-}
-
-.filter-button {
-    display: flex;
-    /* margin: 8px; */
-}
-
-.filter-button img {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    margin-left: 5px;
-}
-
-.filter-button span {
-    color: #fafafa;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Hidden Filter Panel */
-/* Ensure Filter Panel is Above Everything */
-/* FILTER PANEL STYLING */
-.filter-panel {
-    position: fixed;
-    top: 0;
-    right: -350px;
-    /* Initially hidden */
-    width: 300px;
-    height: 100vh;
-    background: #fff;
-    padding: 20px;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-    /* Ensure it appears on top */
-    overflow-y: auto;
-    border-left: 2px solid #ddd;
-    background-color: #354759;
-    color: #fafafa;
-    transition: right 0.3s ease-in-out;
-
-}
 
 
-.filter-section {
-    margin: 25px 0;
-}
-
-.filter-section h3 {
-    margin-bottom: 10px;
-}
-
-/* CLOSE BUTTON */
-.filter-panel .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 22px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #fafafa;
-}
-
-/* FILTER HEADER */
-.filter-panel h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    /* color: #333; */
-}
-
-/* SLIDER STYLING */
-.filter-panel input[type="range"] {
-    width: 100%;
-    margin-top: 10px;
-}
-
-/* AMENITIES CHECKBOX */
-.filter-panel label {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-/* RADIO BUTTONS */
-.filter-panel input[type="radio"],
-.filter-panel input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.apply-filters {
-    /* margin-top: 3px; */
-    background-color: #f8d22a;
-    /* Yellow button */
-    color: #000;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-}
-
-.filter-button{
-    margin-left: 150px;
-}
 
 
 @media only screen and (min-width:768px) and (max-width: 1024px) {
@@ -1191,4 +1178,44 @@ hr {
         flex-shrink: 0; /* Prevent shrinking */
         margin-left: 10px; /* Add spacing */
     }
-}
+
+
+     .sub-header {
+        padding: 6px 10px; 
+    }
+
+    .sub-header nav ul {
+        gap: 50px; 
+        text-wrap: nowrap;
+        justify-content: center; 
+    }
+
+    .sub-header nav ul li a {
+        font-size: 14px; 
+        padding: 8px 10px; 
+    }
+
+    .hamburger {
+        width: 16px;
+        height: 16px;
+    }
+
+    .filter-button {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+
+    .subhdr #all-dropdown-btn,
+    #location-dropdown-btn {
+        font-size: 14px; 
+    }
+
+    .subhdr #all-dropdown-btn{
+        margin-bottom: 2px;
+    }
+
+    .dropdown-menu {
+        width: 200px; 
+        font-size: 13px; 
+    } 
+} 
