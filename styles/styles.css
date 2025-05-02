@@ -57,7 +57,7 @@ html,body {
 }
 
 
-.logo {
+    .logo {
     display: flex;
     align-items: center;
     gap: 2px;
@@ -543,8 +543,8 @@ hr {
     /* color: white; */
 }
 
-
 .hero-section {
+    display: block; /* remove flex here */
     position: relative;
     width: 100%;
     height: 100vh;
@@ -553,94 +553,99 @@ hr {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #D9D9D9;
-    text-align: center;
-    padding: 20px;
+    padding: 20px 0;
 }
-
 
 .pg-form-container {
-    position: relative;
-    background: white;
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
-    margin: 30px auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    height: auto;
-    box-sizing: border-box;
-
+    max-width: 380px;
+    background-color: #fafafa;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    /* margin-right: 50px; */
 }
-
-.pg-form {
-    position: relative;
-    width: 100%;
-}
-
 
 .pg-form h2 {
-    font-size: 22px;
-    margin: 15px 0;
-    color: #000400;
     text-align: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #000;
+    text-wrap: nowrap;
 }
 
-.pg-form input {
+.pg-form input[type="name"],
+.pg-form input[type="tel"] {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
 }
+
+.pg-form input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
 .checkbox-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    margin-bottom: 25px;
+    margin-left: 2px;
     font-size: 14px;
-    margin: 12px 0;
-    flex-wrap: wrap;
 }
-
-.checkbox-container input {
-    margin: 0;
-}
-
-.checkbox-container .checkbox-txt {
-    margin: 0;
-}
-
 
 .pg-btn-form {
-    display: block;
-    background-color: #FDD835;
-    color: black;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 10px 30px;
-    border-radius: 30px;
-    margin: 10px auto 0;
-    text-decoration: none;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
+    width: 100%;
+    background-color: #FFD700;
     border: none;
+    color: black;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pg-btn-form:hover {
+    background-color: #e6c200;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .form-terms {
-    font-size: 13px;
-    margin-top: 20px;
     text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    color: #555;
+    font-weight: bold;
 }
 
 .form-terms a {
-    color: #e74c3c;
+    color: #f44336;
     text-decoration: none;
+}
+
+.form-terms a:hover {
+    text-decoration: underline;
+}
+
+.hero-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 5%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .overlay {
@@ -654,19 +659,12 @@ hr {
     /* Adjust transparency */
 }
 
-.hero-content {
-    position: absolute;
-    /* Places text over the image */
-    top: 5%;
-    /* Moves it down */
-    left: 9%;
-    /* Moves it right */
-    /* transform: translate(-80%, -80%); */
-    text-align: center;
-    color: #D9D9D9;
-    /* Ensures text is visible on dark images */
-}
 
+.hero-content {
+    flex: 1;
+    text-align: left;
+    padding-right: 50px;
+}
 
 .hero-content h1 {
     font-size: 2rem;
@@ -691,8 +689,6 @@ hr {
     position: absolute;
     top: 0;
     left: 0;
-    /* width: 100%; */
-    /* height: 100%; */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 }
 
@@ -701,7 +697,7 @@ hr {
 }
 
 .hero-section {
-    padding-top: 100px;
+    padding-top: 50px;
     /* Pushes content down */
 }
 
@@ -744,11 +740,11 @@ hr {
 
 .pg-btn {
     display: inline-block;
-    background-color: #FDD835;
+    background-color: #ffce51;
     /* Yellow color */
     color: black;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: bold;
     padding: 10px 30px;
     border-radius: 30px;
     /* Gives rounded button effect */
@@ -769,10 +765,7 @@ hr {
 
 .info-bar {
     background-color: #27AE60;
-    /* Green background */
-    padding: 50px 250px;
-    /* Spacing */
-    /* text-align: center; */
+    padding: 50px 50px;
     font-family: 'Poppins', sans-serif;
     color: #fafafa;
 }
@@ -787,13 +780,10 @@ hr {
 .info-items {
     margin-top: 50px;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    /* margin: 0 auto;
-     */
-    /* gap: 70px; */
-    /* margin-left: 100px; */
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    /* max-width: 100vw; */
 }
 
 .info-items div {
@@ -804,31 +794,43 @@ hr {
 
 
 .pg-budget {
-    margin-top: 80px;
-    /* text-align: center; */
-    padding: 60px 20px;
+    margin-top: 60px;
+    padding: 30px 20px;
     font-family: 'Poppins', sans-serif;
     position: relative;
+}
+
+.pg-budget-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.pg-budget-text {
+    flex: 1 1 60%;
+    min-width: 250px;
 }
 
 .pg-budget h1 {
     font-size: 2.5rem;
     font-weight: 700;
     color: #000400;
-    margin-left: 250px;
+    margin: 0;
 }
 
 .pg-budget p {
     font-size: 1.2rem;
     color: #000400;
-    max-width: 800px;
-    margin: 10px auto 30px;
-    margin-left: 250px;
-    margin-top: 20px;
+    margin: 20px 0;
+    max-width: 600px;
 }
 
 .pg-budget-btn {
-    display: inline-block;
     background-color: #FDD835;
     color: #000400;
     font-size: 1.2rem;
@@ -838,16 +840,15 @@ hr {
     text-decoration: none;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
-    position: absolute;
-    right: 10%;
-    bottom: 40%;
-    margin-top: 6px;
+    white-space: nowrap;
 }
 
 .pg-budget-btn:hover {
     background-color: #FBC02D;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
+
+
 
 
 .pg-listings {
@@ -943,29 +944,31 @@ hr {
     text-align: center;
     padding: 50px 20px;
     background-color: #fafafa;
-    /* White background */
 }
 
 .how-it-works h2 {
     font-size: 35px;
     font-weight: bold;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .steps {
     display: flex;
     justify-content: center;
-    gap: 100px;
-    flex-wrap: wrap;
+    gap: 40px;
+    flex-wrap: nowrap;
     margin-bottom: 30px;
     cursor: pointer;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .step {
     width: 150px;
     height: 150px;
     background-color: #24ae5f;
-    /* Green color */
     color: #fff;
     font-size: 16px;
     font-weight: bold;
@@ -975,25 +978,32 @@ hr {
     text-align: center;
     border-radius: 50%;
     padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: scale(1.05);
 }
 
 .pg-btn {
-    background-color: #f8d22a;
-    /* Yellow button */
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
+    background-color: #fdd835;
+    color: #000400;
+    font-size: 1.1rem;
+    font-weight: 600;
     padding: 15px 50px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: background 0.3s ease;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
 .pg-btn:hover {
-    background-color: #e6c01d;
+    background-color: #fbc02d;
 }
+
 
 
 .connect-section {
@@ -1213,6 +1223,59 @@ hr {
         width: 200px; 
         font-size: 13px; 
     } 
-} 
+
+    .overlay{
+        height: 55%;
+    }
+
+    .pg-budget-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .pg-budget-btn {
+        text-align: center;
+    }
+
+    .pg-budget h1 {
+        font-size: 2.5rem;
+    }
+
+    .pg-budget p {
+        font-size: 1.2rem;
+    }
+
+    .how-it-works h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .step {
+        width: 120px;
+        height: 120px;
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .pg-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .step {
+        width: 100px;
+        height: 100px;
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .how-it-works h2 {
+        font-size: 24px;
+    }
+}
 
 
