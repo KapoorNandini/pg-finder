@@ -3,24 +3,36 @@ const cors = require("cors");
 const path = require('path');
 const dotenv = require("dotenv");
 const connectDB = require('./config/db');
-require("dotenv").config();
 const pgRoutes = require('./routes/pgroutes');
+const authRoutes = require('./routes/authRoutes');
+require("dotenv").config();
 
-dotenv.config();
 const app = express();
 
-app.use(express.json());
-app.use(cors());
+// Middleware
+app.use(express.json());  // For parsing JSON data
+app.use(cors());  // Enable CORS
+
+// Connect to the database
+connectDB();
+
+// Routes
+app.use("/api/auth", authRoutes);  // Authentication routes
+app.use('/api', pgRoutes);  // Postgres related routes
+
+// Serve static files from the Frontend
 app.use(express.static(path.join(__dirname, '../Frontend')));
 
-app.use('/api', pgRoutes);
-app.get('/', (req, res) => res.send('API Running...'));
-
+// Serve index.html on the root endpoint
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Frontend', 'index.html'));
+  res.sendFile(path.join(__dirname, '../Frontend', 'index.html'));
 });
 
+// Fallback for 404 if API route doesn't match
+app.all('*', (req, res) => {
+  res.status(404).send('API route not found');
+});
+
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-connectDB();
