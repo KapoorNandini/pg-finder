@@ -1,6 +1,10 @@
 const User = require('../models/User');
 
 exports.registerUser = async (req, res) => {
+
+  console.log('Register route hit'); // 🔍 Add this
+  console.log(req.body);
+
   try {
     const { name, email, password } = req.body;
 

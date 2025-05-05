@@ -71,35 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const loginForm = document.getElementById("login-form");
-    const emailInput = document.getElementById("login-email");
-    const passwordInput = document.getElementById("login-password");
-
-    loginForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent form from refreshing the page
-
-        // Simulated user authentication (since we have no backend)
-        const dummyUser = {
-            email: "testuser@example.com",
-            password: "Test@1234",
-        };
-
-        if (emailInput.value === dummyUser.email && passwordInput.value === dummyUser.password) {
-            alert("Login Successful! ✅");
-            localStorage.setItem("isLoggedIn", "true"); // Store login status
-            window.location.href = "index.html"; // Redirect to homepage
-        } else {
-            alert("Invalid Email or Password ❌");
-        }
-    });
-});
-
-
-
-
-
 var animation = lottie.loadAnimation({
     container: document.getElementById("lottie-container"),
     renderer: "svg",

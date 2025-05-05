@@ -1,3 +1,5 @@
+console.log("script.js loaded!");
+
 window.addEventListener("scroll", function () {
     document.querySelector(".navbar").style.position = "sticky";
 });
@@ -11,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const menu = document.querySelector(".dropdown-menu");
 
     // Open and close dropdown on click
-    dropdown.addEventListener("click", function () {
-        dropdown.classList.toggle("active");
-    });
+    // dropdown.addEventListener("click", function () {
+    //     dropdown.classList.toggle("active");
+    // });
 
     // Close dropdown when clicking outside
     document.addEventListener("click", function (event) {
@@ -32,18 +34,18 @@ document.addEventListener("DOMContentLoaded", function () {
             "images/bg3.jpg",
             "images/bg4.jpg"
         ];
-    
+
         let currentIndex = 0;
         function changeBackground() {
             document.getElementById("hero").style.backgroundImage = `url(${images[currentIndex]})`;
             currentIndex = (currentIndex + 1) % images.length;
         }
-        
+
         setInterval(changeBackground, 3000);
     });
-    
 
-    
+
+
 
     // Handle item selection
     document.querySelectorAll(".dropdown-menu li").forEach(item => {
@@ -107,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Update price range dynamically
-document.getElementById("priceRange").addEventListener("input", function() {
+document.getElementById("priceRange").addEventListener("input", function () {
     document.getElementById("priceValue").innerText = "₹" + this.value;
 });
 
@@ -118,10 +120,7 @@ const filterButton = document.querySelector(".filter-button");
 const closeFilter = document.getElementById("closeFilter");
 
 
-// Open filter panel
-// openFilter.addEventListener("click", () => {
-//     filterPanel.style.right = "0";
-// });
+
 filterButton.addEventListener("click", () => {
     filterPanel.style.right = "0";
 });
@@ -240,13 +239,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".hamburger-menu");
     const menu = document.querySelector(".menu");
 
-    menuToggle.addEventListener("click", function() {
+    menuToggle.addEventListener("click", function () {
         menu.classList.toggle("active"); // Show/hide menu
     });
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+
+        try {
+            const res = await fetch("http://localhost:5000/api/auth/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    firstName,
+                    lastName,
+                    email,
+                    password
+                })
+            });
+
+            const data = await res.json();
+            console.log("Success:", data);
+        } catch (err) {
+            console.error("Error:", err);
+        }
+
+    });
+});

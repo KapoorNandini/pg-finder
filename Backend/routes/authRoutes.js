@@ -4,4 +4,4 @@ const { registerUser } = require('../controllers/authControllers');
 
 router.post('/register', registerUser);
 
-module.exports = router;
+module.exports = router;    
