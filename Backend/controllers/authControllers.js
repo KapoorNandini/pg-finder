@@ -1,55 +1,65 @@
 const User = require('../models/user');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
 require('dotenv').config();
+const { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } = require('../config/firebaseConfig');
 
-// Register user
-exports.registerUser = async (req, res) => {
+// Firebase register function
+async function registerUser(req, res) {
+  const { email, password } = req.body;
+
   try {
-    const { firstName, lastName, email, password } = req.body;
-    console.log('Received data:', req.body);
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const firebaseUser = userCredential.user;
 
-    // Check if the user already exists
+    // Save the user to MongoDB after registration
+    await saveUserToMongoDB(firebaseUser.uid, email);
+    res.status(201).json({ message: 'User registered successfully', user: firebaseUser });
+  } catch (error) {
+    console.error('Error registering user:', error);
+    res.status(500).json({ message: 'Error registering user', error: error.message });
+  }
+}
+
+// Save user to MongoDB
+async function saveUserToMongoDB(firebaseUid, email) {
+  try {
     const existingUser = await User.findOne({ email });
-    if (existingUser) return res.status(400).json({ message: "User already exists" });
+    if (existingUser) {
+      return;
+    }
 
-    // Concatenate firstName and lastName to create name
-    const name = `${firstName} ${lastName}`;
+    const newUser = new User({
+      firebaseUid,
+      email,
+      name: 'John Doe', // You can use dynamic data here
+    });
 
-    // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create a new user
-    const user = new User({ name, email, password: hashedPassword });
-
-    // Save the user to the database
-    await user.save();
-
-    // Respond with a success message
-    res.status(201).json({ message: "User registered successfully", user });
+    await newUser.save();
   } catch (error) {
-    console.error("Registration error:", error); // Log the error details
-    res.status(500).json({ error: error.message });
+    console.error('Error saving user to MongoDB:', error);
   }
-};
+}
 
-exports.loginUser = async (req, res) => {
+// Login user
+// Login user (Express handler)
+async function loginUser(req, res) {
+  const { email, password } = req.body;
+
   try {
-      const { email, password } = req.body;
-      const user = await User.findOne({ email });
-      if (!user) {
-          return res.status(400).json({ message: 'Invalid email or password' });
-      }
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const firebaseUser = userCredential.user;
 
-      const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) {
-          return res.status(400).json({ message: 'Invalid email or password' });
-      }
+    const userData = await User.findOne({ firebaseUid: firebaseUser.uid });
 
-      const token = jwt.sign({ userId: user._id }, 'mySecretKey', { expiresIn: '1h' });
-      res.status(200).json({ token });
+    if (!userData) {
+      return res.status(404).json({ message: 'User not found in MongoDB' });
+    }
+
+    return res.status(200).json({ message: 'Login successful', user: userData });
   } catch (error) {
-      console.error('Login Error:', error);
-      res.status(500).json({ error: 'Server error' });
+    console.error('Error logging in user:', error.message);
+    return res.status(401).json({ message: 'Invalid credentials', error: error.message });
   }
-};
+}
+
+
+module.exports = { registerUser, loginUser};

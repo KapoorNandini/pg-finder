@@ -1,31 +1,31 @@
 const express = require("express");
-const path = require('path');
+const path = require("path");
 const cors = require("cors");
-const connectDB = require('./config/db');
+const pool = require('./config/pg');
+const connectDB = require("./config/db"); // MongoDB connection
+const authRoutes = require("./routes/authRoutes");
 const pgRoutes = require('./routes/pgroutes');
-const authRoutes = require('./routes/authRoutes');
 require("dotenv").config();
 
 const app = express();
 
 // Middleware
-app.use(express.json());  // For parsing JSON data
-app.use(cors());  // Enable CORS
+app.use(express.json());
+app.use(cors());
 
-// Connect to the database
-connectDB();
+// Connect MongoDB for auth
+connectDB(); // this should connect via mongoose
 
-// Routes
-app.use("/api/auth", authRoutes);  // Authentication routes
-app.use('/api', pgRoutes);  // Postgres related routes
+// MongoDB-based routes (login/signup)
+app.use("/api/auth", authRoutes);
 
-// Serve static files from the Frontend
-app.use(express.static(path.join(__dirname, '../Frontend')));   
-app.get('/login.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Frontend/login.html'));
-  });
-  
+// PostgreSQL-based PG listing (handled in pgroutes.js)
+app.use("/api/pg", pgRoutes); // Moved the '/list-pg' route to pgRoutes
 
-// Start server
+// Static frontend
+app.use(express.static(path.join(__dirname, "../Frontend")));
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "../Frontend/index.html")));
+app.get("/login", (req, res) => res.sendFile(path.join(__dirname, "../Frontend/login.html")));
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));

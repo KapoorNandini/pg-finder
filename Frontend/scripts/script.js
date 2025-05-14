@@ -249,35 +249,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
-
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const firstName = document.getElementById("firstName").value;
-        const lastName = document.getElementById("lastName").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-
-
-        try {
-            const res = await fetch("http://localhost:5000/api/auth/register", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    firstName,
-                    lastName,
-                    email,
-                    password
-                })
-            });
-
-            const data = await res.json();
-            console.log("Success:", data);
-        } catch (err) {
-            console.error("Error:", err);
-        }
-
-    });
-});
